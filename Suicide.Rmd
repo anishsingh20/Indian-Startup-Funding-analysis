@@ -21,6 +21,20 @@ require(highcharter)
 ```{r,error=FALSE,message=FALSE}
 
 suicide<-read.csv("Suicides in India 2001-2012.csv")
+attach(suicide)
+
+#let's see the various types of suicidal methods
+table(Type)
+
+table(Gender)
+
+```
+
+### Let's do some time series analysis of year and total number of cases
+
+```{r,message=F,error=FALSE}
+
+
 
 ```
 
