@@ -38,7 +38,26 @@ TopInd<-startup %>% group_by(IndustryVertical) %>%
 hchart(TopInd,hcaes(x=IndustryVertical,y=total),type="column",name="Industry",color = "orange") %>% 
    hc_exporting(enabled = TRUE) %>% 
    hc_title(text="Barplot of Industry to which startups belong" ,align="center") %>%
-                  hc_add_theme(hc_theme_elementary()) 
+   hc_add_theme(hc_theme_elementary()) 
+
+
+```
+
+let's see where most of the offices belong to.
+
+```{r,error=FALSE,message=FALSE}
+
+Location<-startup %>% group_by(CityLocation) %>% 
+  summarise(total = n()) %>% 
+  top_n(20) %>% 
+  arrange(desc(total))
+
+
+hchart(Location,hcaes(x=CityLocation,y=total),type="column",name="Location",color = "red") %>% 
+   hc_exporting(enabled = TRUE) %>% 
+   hc_title(text="Barplot of startup Location" ,align="center") %>%
+   hc_add_theme(hc_theme_elementary()) 
+
 
 
 ```
