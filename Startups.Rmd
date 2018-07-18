@@ -19,6 +19,27 @@ require(highcharter)
 ```{r}
 
 startup<-read.csv("startup_funding.csv")
+attach(startup)
+
+```
+
+
+Let's start with some descriptive analysis. Let's check to which industry most of the start ups belong.
+
+```{r}
+
+TopInd<-startup %>% group_by(IndustryVertical) %>% 
+  summarize(total = n()) %>% 
+  top_n(20) %>% 
+  arrange(desc(total))
+
+
+
+hchart(TopInd,hcaes(x=IndustryVertical,y=total),type="column",name="Industry",color = "orange") %>% 
+   hc_exporting(enabled = TRUE) %>% 
+   hc_title(text="Barplot of Industry to which startups belong" ,align="center") %>%
+                  hc_add_theme(hc_theme_elementary()) 
+
 
 ```
 
