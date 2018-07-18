@@ -3,3 +3,24 @@ title: "Suicides in India"
 output: html_notebook
 ---
 
+
+### Loading the requried packages
+
+```{r,message=FALSE,error=FALSE}
+require(dplyr)
+require(tidyr)
+require(highcharter)
+
+
+```
+
+
+
+### Let's read the data-
+
+```{r,error=FALSE,message=FALSE}
+
+suicide<-read.csv("Suicides in India 2001-2012.csv")
+
+```
+
