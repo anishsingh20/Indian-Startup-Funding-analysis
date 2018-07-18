@@ -34,7 +34,8 @@ table(Gender)
 
 ```{r,message=F,error=FALSE}
 
-
-
+year_df<-suicide %>% select(Year,Total)  %>% 
+    group_by(Year) %>% 
+    summarise(Total_deaths = n())
 ```
 
