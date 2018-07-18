@@ -1,0 +1,24 @@
+---
+title: "Startup Funding in India"
+output: html_notebook
+---
+
+
+### Loading the requried packages
+
+```{r,message=FALSE,error=FALSE}
+require(dplyr)
+require(tidyr)
+require(highcharter)
+
+
+```
+
+## Let's read the data-
+
+```{r}
+
+startup<-read.csv("startup_funding.csv")
+
+```
+
